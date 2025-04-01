@@ -124,7 +124,7 @@ public class PerspectiveMove : MonoBehaviour
             currentSpeed = 2.5f * runSpeed;
             isDash = true;
 
-            soundSys.PlayerDashSound();
+            //soundSys.PlayerDashSound();
             /* if(isDashing)
             {
                 playerRB.AddRelativeForce(Vector3.forward * runSpeed, ForceMode.Impulse);

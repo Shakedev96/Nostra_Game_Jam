@@ -11,12 +11,12 @@ public class SoundSys : MonoBehaviour
     public AudioClip playerDash;
 
     //public AudioClip playerShoot;
-     public PlayerCon platPlayer;
+    public PlayerCon platPlayer;
     // Start is called before the first frame update
     void Start()
     {
         playerSource = FindObjectOfType<AudioSource>();
-        platPlayer = GameObject.Find("PlayerPlatformer").GetComponent<PlayerCon>();
+        //platPlayer = GameObject.Find("PlayerPlatformer").GetComponent<PlayerCon>();
     }
 
     // Update is called once per frame

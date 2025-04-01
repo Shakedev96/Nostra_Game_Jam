@@ -6,7 +6,7 @@ public class Boss : MonoBehaviour
 {
    [Header("Player Settings")]
     [SerializeField] private Transform player;  // Reference to the player's transform
-    [SerializeField] private Variables playerHealth;
+    //[SerializeField] private Variables playerHealth;
 
     [Header("Radius Settings")]
     [SerializeField] private float followRadius = 10f;  // Radius within which the enemy starts following
@@ -35,6 +35,11 @@ public class Boss : MonoBehaviour
     void Awake()
     {
         enemyRB = GetComponent<Rigidbody>();
+        anim.GetComponent<Animator>();
+        if (anim == null)
+        {
+            Debug.LogError("Animator component missing on " + gameObject.name);
+        }
     }
 
     private void Update()
@@ -119,7 +124,7 @@ public class Boss : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && Time.time >= lastAttackTime + cooldownTime)
         {
             // Apply damage to the player on collision
-            playerHealth.ApplyChange(-attackDamage);
+            //playerHealth.ApplyChange(-attackDamage);
             anim.SetBool("bossDash",true);
             
             Debug.Log("Enemy collided with player and dealt damage.");
